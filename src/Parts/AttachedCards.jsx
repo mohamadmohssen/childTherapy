@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import "./attachedcards.css";
+import "../css/attachedcards.css";
 import { FaClock } from "react-icons/fa6";
 const Content = () => {
   return (
