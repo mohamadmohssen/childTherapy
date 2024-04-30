@@ -1,11 +1,18 @@
-.banner {
-  position: relative;
-  overflow: hidden;
-  background: url("../img/homebg.jpg") no-repeat;
+.bgimg {
+  background-image: url("/src/images/homebg.jpg");
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+}
+@media (max-width: 900px) {
+  .bgimg {
+    background-image: none;
+  }
+}
+
+.banner {
+  position: relative;
+  overflow: hidden;
   .block {
     padding: 80px 0px 160px;
 
