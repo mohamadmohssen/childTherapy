@@ -1,0 +1,389 @@
+/**
+ * WEBSITE: https://themefisher.com
+ * TWITTER: https://twitter.com/themefisher
+ * FACEBOOK: https://www.facebook.com/themefisher
+ * GITHUB: https://github.com/themefisher/
+ */
+
+/*!------------------------------------------------------------------
+[MAIN STYLESHEET]
+
+PROJECT:	Project Name
+VERSION:	Versoin Number
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[TABLE OF CONTENTS]
+-------------------------------------------------------------------*/
+/*  typography */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap");
+
+h1,
+.h1 {
+  font-size: 52px;
+}
+
+h2,
+.h2 {
+  font-size: 36px;
+}
+
+h3,
+.h3 {
+  font-size: 24px;
+}
+
+h4,
+.h4 {
+  font-size: 18px;
+}
+
+h5,
+.h5 {
+  font-size: 15px;
+}
+
+h6,
+.h6 {
+  font-size: 13px;
+}
+
+/* Button style */
+.btn {
+  font-size: 14px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-radius: 50px;
+  border: 1px solid;
+  position: relative;
+  z-index: 1;
+  transition: 0.2s ease;
+}
+.btn:hover,
+.btn:active,
+.btn:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.btn-primary {
+  background: #39cabb;
+  color: #fff;
+  border-color: #39cabb;
+}
+.btn-primary:active,
+.btn-primary:hover,
+.btn-primary.focus,
+.btn-primary.active {
+  background: #39cabb !important;
+  border-color: #39cabb !important;
+}
+
+.btn-outline-primary {
+  background: transparent;
+  color: #39cabb;
+  border-color: #39cabb;
+}
+.btn-outline-primary:active,
+.btn-outline-primary:hover,
+.btn-outline-primary.focus,
+.btn-outline-primary.active {
+  background: #39cabb !important;
+  border-color: #39cabb !important;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #5ed4c8;
+  color: #fff;
+}
+
+::selection {
+  background: #5ed4c8;
+  color: #fff;
+}
+
+/* preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a,
+button,
+select {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+a:focus,
+button:focus,
+select:focus {
+  outline: 0;
+}
+
+a:hover {
+  color: #39cabb;
+}
+
+.slick-slide {
+  outline: 0;
+}
+
+hr {
+  margin: 40px 0;
+}
+
+.shadow,
+.promotion,
+.logo-list li,
+.widget,
+.card,
+.navbar .dropdown-menu {
+  box-shadow: 0px 25px 65px rgba(0, 0, 0, 0.05) !important;
+}
+
+.mark,
+mark {
+  padding: 0;
+  background-color: transparent;
+  border-bottom: 3px solid #39cabb;
+  color: #39cabb;
+}
+
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.section-sm {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.section-title {
+  position: relative;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 0.06em;
+}
+.section-title::before {
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  content: "";
+  height: 2px;
+  width: 60px;
+  background-color: #39cabb;
+}
+
+.bg-cover {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.border-primary {
+  border-color: #ebebeb !important;
+}
+
+.circle-list {
+  list-style: none;
+  padding-left: 0;
+}
+.circle-list li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.circle-list li:last-child {
+  margin-bottom: 0;
+}
+.circle-list li::before {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  border: 1px solid #39cabb;
+  left: 0;
+  top: 7px;
+  border-radius: 50px;
+}
+
+/* badge */
+.badge {
+  border-radius: 0;
+  position: absolute;
+  width: 150px;
+  transform: rotate(45deg);
+  right: -45px;
+  top: 20px;
+  text-transform: uppercase;
+}
+.badge-primary {
+  background-color: #39cabb;
+}
+
+/* overlay */
+.overlay {
+  position: relative;
+}
+.overlay::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+}
+
+.bg-primary {
+  background: #39cabb !important;
+}
+
+.text-primary {
+  color: #39cabb !important;
+}
+
+.text-default {
+  color: #555 !important;
+}
+
+.border-default {
+  border-color: #ebebeb !important;
+}
+
+.form-control:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.st0 {
+  fill: #39cabb;
+}
+
+.sidebar-home {
+  margin-top: 47px;
+}
+@media (max-width: 991px) {
+  .sidebar-home {
+    margin-top: 0;
+  }
+}
+
+.sidebar-inner {
+  margin-top: 65px;
+}
+@media (max-width: 991px) {
+  .sidebar-inner {
+    margin-top: 0;
+  }
+}
+
+.navigation {
+  border-bottom: 1px solid #ebebeb;
+  transition: 0.2s ease;
+  padding: 10px 0;
+}
+.navigation.nav-bg {
+  background-color: #fff;
+}
+@media (max-width: 991px) {
+  .navigation {
+    background-color: #fff;
+  }
+}
+
+.nav-item {
+  margin: 0;
+}
+.nav-item .nav-link {
+  text-transform: capitalize;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+}
+
+.navbar-white .navbar-nav .nav-link {
+  color: #333;
+}
+.navbar-white .navbar-nav .nav-link:hover {
+  color: #39cabb;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 20px;
+}
+@media (max-width: 991px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 10px;
+  }
+}
+
+.navbar {
+  padding: 0;
+}
+.navbar .dropdown:hover .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+.navbar .dropdown i {
+  font-size: 12px;
+}
+.navbar .dropdown-menu {
+  padding: 20px 15px;
+  border: 0;
+  top: calc(100% - 10px);
+  left: 15px;
+  border-radius: 5px;
+  background: #fff;
+  transition: 0.2s ease;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.9);
+}
+@media (max-width: 991px) {
+  .navbar .dropdown-menu {
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    text-align: inherit;
+  }
+}
+.navbar .dropdown-menu.show {
+  visibility: hidden;
+}
+@media (max-width: 991px) {
+  .navbar .dropdown-menu.show {
+    visibility: visible;
+    display: block;
+  }
+}
+.navbar .dropdown-item {
+  position: relative;
+  color: #333;
+  transition: 0.2s ease;
+  font-size: inherit;
+  padding: 8px 10px;
+  border-radius: inherit;
+}
+.navbar .dropdown-item:hover {
+  color: #39cabb !important;
+  background-color: #f9f9f9;
+}
