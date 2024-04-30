@@ -8,5 +8,5 @@ const ErrorPage = () => {
     </section>
   );
 };
-
+//yufy
 export default ErrorPage;
