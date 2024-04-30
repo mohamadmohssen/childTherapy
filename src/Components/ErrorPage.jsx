@@ -2,6 +2,7 @@ import "./navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { Link } from "react-router-dom";
+//s
 const ErrorPage = () => {
   return (
     <section className="banner">
