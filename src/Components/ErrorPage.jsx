@@ -4,7 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 const ErrorPage = () => {
   return (
     <section className="">
-      <h1>404 EROORRRRR!!!</h1>
+      <h1>404 EROORRRRR!!! hello</h1>
     </section>
   );
 };
