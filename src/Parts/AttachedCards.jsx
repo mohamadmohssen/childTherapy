@@ -1,8 +1,32 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "../css/attachedcards.css";
-import { FaClock } from "react-icons/fa6";
+import { useEffect } from "react";
+import { FaClock, FaUserDoctor } from "react-icons/fa6";
 const AttachedCards = () => {
+  /*This use effect is for let the component float up when scrollin to it*/
+  useEffect(() => {
+    const floatingComponents = document.querySelectorAll(".float-up-animation");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    floatingComponents.forEach((component) => {
+      observer.observe(component);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   return (
     <section class="features">
       <div class="container">
@@ -13,8 +37,15 @@ const AttachedCards = () => {
                 class="feature-item mb-5 mb-lg-0"
                 style={{ backgroundColor: "#39cabb" }}
               >
-                <div class="feature-icon mb-4">
-                  <i class="icofont-surgeon-alt"></i>
+                <div
+                  class="feature-icon mb-4"
+                  style={{
+                    fontSize: "50px",
+                    display: "grid",
+                    justifyContent: "center",
+                  }}
+                >
+                  <FaUserDoctor />
                 </div>
                 <span>24 Hours Service</span>
                 <h4 class="mb-3">Online Appoinment</h4>
@@ -29,9 +60,16 @@ const AttachedCards = () => {
 
               <div
                 class="feature-item mb-5 mb-lg-0"
-                style={{ backgroundColor: "#0377fc" }}
+                style={{ backgroundColor: "#aeeae4" }}
               >
-                <div class="feature-icon mb-4" style={{ fontSize: "50px" }}>
+                <div
+                  class="feature-icon mb-4"
+                  style={{
+                    fontSize: "50px",
+                    display: "grid",
+                    justifyContent: "center",
+                  }}
+                >
                   <FaClock />
                 </div>
                 <span>Timing schedule</span>

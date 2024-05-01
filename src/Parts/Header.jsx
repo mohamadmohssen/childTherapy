@@ -8,7 +8,6 @@ import AttachedCards from "./AttachedCards";
 const Header = () => {
   return (
     <div>
-      <Navbar />
       <div className="bgimg">
         <section className="banner mt-5" style={{ padding: 0 }}>
           <div className="container">
@@ -43,6 +42,7 @@ const Header = () => {
           </div>
         </section>
       </div>
+
       <AttachedCards />
     </div>
   );
