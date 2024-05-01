@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Home from "./Components/Home";
 import ErrorPage from "./Components/ErrorPage";
+import Contactus from "./Components/Contactus";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     path: "*",
     element: <ErrorPage />,
   },
+  { path: "/contactus", element: <Contactus /> },
 ]);
 function App() {
   return (
