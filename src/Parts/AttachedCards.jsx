@@ -11,7 +11,7 @@ const AttachedCards = () => {
             <div class="feature-block d-lg-flex float-up-animation">
               <div
                 class="feature-item mb-5 mb-lg-0"
-                style={{ backgroundColor: "#39cabb" }}
+                style={{ backgroundColor: "#34223e" }}
               >
                 <div class="feature-icon mb-4">
                   <i class="icofont-surgeon-alt"></i>
