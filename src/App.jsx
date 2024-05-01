@@ -1,4 +1,3 @@
-import { useState } from "react";
 import React from "react";
 import {
   createBrowserRouter,
@@ -6,26 +5,22 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import Content from "./Components/Content";
-import Navbar from "./Components/Navbar";
+import Home from "./Components/Home";
 import ErrorPage from "./Components/ErrorPage";
+import Contactus from "./Components/Contactus";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navbar />,
+    element: <Home />,
   },
-  {
-    path: "/content",
-    element: <Content />,
-  },
+
   {
     path: "*",
     element: <ErrorPage />,
   },
+  { path: "/contactus", element: <Contactus /> },
 ]);
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
       <RouterProvider router={router} />

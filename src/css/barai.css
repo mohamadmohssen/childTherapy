@@ -1,0 +1,29 @@
+.cta {
+  background-image: url("../images/counter-bg.jpg");
+  background-size: cover;
+  position: relative;
+}
+.cta::before {
+  position: absolute;
+  content: "";
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(57, 202, 187, 0.14);
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.cta-section {
+  margin-top: 2rem;
+  background-color: rgb(240, 240, 240);
+}
+.txt-inside-counter {
+  font-size: large;
+  color: #01244c;
+}
+.counter-stat {
+  padding: 2rem;
+}

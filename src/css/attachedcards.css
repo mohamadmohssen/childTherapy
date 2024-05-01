@@ -1,0 +1,48 @@
+.features {
+  margin-top: -100px;
+}
+
+.float-up-animation {
+  opacity: 0;
+  transform: translateY(50px); /* Adjust the initial translateY value */
+  transition: opacity 0.5s ease, transform 1s ease; /* Add smooth transition effects */
+}
+
+.float-up-animation.visible {
+  opacity: 1;
+  transform: translateY(0); /* Reset transform */
+}
+.feature-item {
+  flex-basis: 33.33%;
+  margin: 0px 10px;
+  padding: 40px 30px;
+  background-color: rgb(255, 244, 244);
+  border-radius: 20px;
+  box-shadow: 0px 0px 55px 50px rgba(0, 42, 106, 0.2);
+
+  .feature-icon {
+    i {
+      font-size: 50px;
+      color: rgb(255, 255, 255);
+    }
+  }
+
+  h4 {
+    color: rgb(255, 255, 255);
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+.feature-section.border-top {
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.w-hours {
+  li {
+    padding: 6px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+}
