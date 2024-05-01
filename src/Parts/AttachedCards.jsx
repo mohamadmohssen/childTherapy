@@ -2,14 +2,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "../css/attachedcards.css";
 import { FaClock } from "react-icons/fa6";
-const Content = () => {
+const AttachedCards = () => {
   return (
     <section class="features">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <div class="feature-block d-lg-flex float-up-animation">
-              <div class="feature-item mb-5 mb-lg-0">
+              <div
+                class="feature-item mb-5 mb-lg-0"
+                style={{ backgroundColor: "#39cabb" }}
+              >
                 <div class="feature-icon mb-4">
                   <i class="icofont-surgeon-alt"></i>
                 </div>
@@ -24,8 +27,11 @@ const Content = () => {
                 </a>
               </div>
 
-              <div class="feature-item mb-5 mb-lg-0">
-                <div class="feature-icon mb-4">
+              <div
+                class="feature-item mb-5 mb-lg-0"
+                style={{ backgroundColor: "#0377fc" }}
+              >
+                <div class="feature-icon mb-4" style={{ fontSize: "50px" }}>
                   <FaClock />
                 </div>
                 <span>Timing schedule</span>
@@ -43,7 +49,10 @@ const Content = () => {
                 </ul>
               </div>
 
-              <div class="feature-item mb-5 mb-lg-0">
+              <div
+                class="feature-item mb-5 mb-lg-0"
+                style={{ backgroundColor: "#39cabb" }}
+              >
                 <div class="feature-icon mb-4">
                   <i class="icofont-support"></i>
                 </div>
@@ -63,4 +72,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default AttachedCards;

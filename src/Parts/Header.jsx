@@ -4,6 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import { FaShield } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import Navbar from "/src/Parts/Navbar";
+import AttachedCards from "./AttachedCards";
 const Header = () => {
   return (
     <div>
@@ -42,6 +43,7 @@ const Header = () => {
           </div>
         </section>
       </div>
+      <AttachedCards />
     </div>
   );
 };
