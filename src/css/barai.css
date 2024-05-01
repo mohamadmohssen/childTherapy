@@ -1,5 +1,5 @@
 .cta {
-  background: url("../images/counter-bg.jpg") no-repeat 50% 50%;
+  background-image: url("../images/counter-bg.jpg");
   background-size: cover;
   position: relative;
 }
@@ -10,14 +10,14 @@
   top: 0px;
   width: 100%;
   height: 100%;
-  background: rgba(57, 202, 187, 0.24);
+  background: rgba(57, 202, 187, 0.14);
 }
 .mb-30 {
   margin-bottom: 30px;
 }
 
 .cta-section {
-  margin-top: 4rem;
+  margin-top: 2rem;
   background-color: rgb(240, 240, 240);
 }
 .txt-inside-counter {
