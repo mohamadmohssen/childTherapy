@@ -1,0 +1,4 @@
+.accordion {
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgb(174, 234, 228);
+    --bs-accordion-active-bg: rgb(174, 234, 228);
+}

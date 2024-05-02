@@ -4,12 +4,14 @@ import Header from "/src/Parts/Header";
 import Navbar from "/src/Parts/Navbar";
 import BarAutoIncrement from "../Parts/BarAutoIncrement";
 import Footer from "../Parts/Footer";
+import Faq from "../Parts/Faq";
 
 const Home = () => {
   return (
     <>
       <Navbar />
       <Header />
+      <Faq />
       <BarAutoIncrement />
       <Navbar />
       <Footer />

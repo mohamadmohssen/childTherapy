@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/contact.css";
-
+import handleSubmit from "react";
 import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
 
 const Contact = () => {
@@ -23,10 +23,10 @@ const Contact = () => {
                         Your message was sent, thank you!
                       </div>
                       <form
-                        form
                         action="https://api.web3forms.com/submit"
                         method="POST"
                         className="contactForm"
+                        onSubmit={handleSubmit}
                       >
                         <div className="row">
                           <div className="col-md-6">
@@ -36,7 +36,7 @@ const Contact = () => {
                               value="1f9569d0-36f9-453e-a47e-df82f31d28bc"
                             ></input>
                             <div className="form-group">
-                              <label className="label" for="name">
+                              <label className="label" htmlFor="name">
                                 Full Name
                               </label>
                               <input
@@ -45,12 +45,13 @@ const Contact = () => {
                                 name="name"
                                 id="name"
                                 placeholder="Name"
+                                required
                               />
                             </div>
                           </div>
                           <div className="col-md-6">
                             <div className="form-group">
-                              <label className="label" for="email">
+                              <label className="label" htmlFor="email">
                                 Email Address
                               </label>
                               <input
@@ -59,12 +60,13 @@ const Contact = () => {
                                 name="email"
                                 id="email"
                                 placeholder="Email"
+                                required
                               />
                             </div>
                           </div>
                           <div className="col-md-12">
                             <div className="form-group">
-                              <label className="label" for="subject">
+                              <label className="label" htmlFor="subject">
                                 Subject
                               </label>
                               <input
@@ -73,12 +75,13 @@ const Contact = () => {
                                 name="subject"
                                 id="subject"
                                 placeholder="Subject"
+                                required
                               />
                             </div>
                           </div>
                           <div className="col-md-12">
                             <div className="form-group">
-                              <label className="label" for="#">
+                              <label className="label" htmlFor="message">
                                 Message
                               </label>
                               <textarea
@@ -88,10 +91,11 @@ const Contact = () => {
                                 cols="30"
                                 rows="4"
                                 placeholder="Message"
+                                required
                               ></textarea>
                             </div>
                           </div>
-                          <div className="col-md-12">
+                          <div className="col-md-12 text-center mt-3">
                             <div className="form-group">
                               <input
                                 type="submit"
@@ -119,8 +123,8 @@ const Contact = () => {
                         </div>
                         <div className="text pl-3">
                           <p>
-                            <span>Address:</span> 198 West 21th Street, Suite
-                            721 New York NY 10016
+                            <span>Address:</span> Islamic University Of Lebanon
+                            Khaldeh
                           </p>
                         </div>
                       </div>
