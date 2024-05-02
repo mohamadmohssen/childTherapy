@@ -4,6 +4,7 @@ import Header from "/src/Parts/Header";
 import Navbar from "/src/Parts/Navbar";
 import BarAutoIncrement from "../Parts/BarAutoIncrement";
 import Footer from "../Parts/Footer";
+import Faq from "../Parts/Faq";
 import Testimonial from "../Parts/Testimonial";
 
 const Home = () => {
@@ -12,6 +13,8 @@ const Home = () => {
       <Navbar />
       <Header />
       <Testimonial />
+      <Faq />
+
       <BarAutoIncrement />
       <Navbar />
       <Footer />

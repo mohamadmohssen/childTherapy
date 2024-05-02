@@ -1,5 +1,5 @@
 .bg-primary {
-  background: #01d28e !important;
+  background: #2ba195 !important;
 }
 
 .ftco-section {
@@ -42,7 +42,7 @@
 }
 .form-control:focus,
 .form-control:active {
-  border-color: #01d28e !important;
+  border-color: #2ba195 !important;
 }
 
 textarea.form-control {
@@ -99,14 +99,14 @@ textarea.form-control {
 }
 
 .btn.btn-primary {
-  background: #01d28e !important;
-  border-color: #01d28e !important;
+  background: #2ba195 !important;
+  border-color: #2ba195 !important;
   color: #fff;
 }
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
-  border-color: #019f6c !important;
-  background: #019f6c !important;
+  border-color: rgb(174, 234, 228) !important;
+  background: #AEE4EA !important;
 }
 
 .contactForm .label {
