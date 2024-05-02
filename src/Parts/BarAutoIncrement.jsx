@@ -51,22 +51,28 @@ const BarAutoIncrement = () => {
       <div className="container">
         <div className="cta position-relative">
           <div className="row">
-            <div className="col-lg-3 col-md-6 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-6">
               <div className="counter-stat">
                 <strong>
                   <i className="icofont-doctor"></i>
-                  <span className="h3 counter " data-count="58">
+                  <span
+                    className="h3 counter txt-inside-counter"
+                    data-count="58"
+                  >
                     0
                   </span>
                   k<p className="txt-inside-counter">Happy People</p>
                 </strong>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-6">
               <div className="counter-stat">
                 <strong>
                   <i className="icofont-flag"></i>
-                  <span className="h3 counter" data-count="70">
+                  <span
+                    className="h3 counter txt-inside-counter"
+                    data-count="70"
+                  >
                     0
                   </span>
                   +<p className="txt-inside-counter">Surgery Comepleted</p>
@@ -74,25 +80,14 @@ const BarAutoIncrement = () => {
               </div>
             </div>
 
-            <div className="col-lg-3 col-md-6 col-sm-6">
+            <div className="col-lg-4 col-md-12 col-sm-12">
               <div className="counter-stat">
                 <strong>
                   <i className="icofont-badge"></i>
-                  <span class="h3 counter" data-count="40">
+                  <span class="h3 counter txt-inside-counter" data-count="40">
                     0
                   </span>
                   +<p className="txt-inside-counter">Expert Doctors</p>
-                </strong>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="counter-stat">
-                <strong>
-                  <i className="icofont-globe"></i>
-                  <span className="h3 counter" data-count="20">
-                    0
-                  </span>
-                  <p className="txt-inside-counter">Worldwide Branch</p>
                 </strong>
               </div>
             </div>

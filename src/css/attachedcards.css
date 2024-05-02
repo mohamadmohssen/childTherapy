@@ -4,13 +4,13 @@
 
 .float-up-animation {
   opacity: 0;
-  transform: translateY(50px); /* Adjust the initial translateY value */
-  transition: opacity 0.5s ease, transform 1s ease; /* Add smooth transition effects */
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 1s ease;
 }
 
 .float-up-animation.visible {
   opacity: 1;
-  transform: translateY(0); /* Reset transform */
+  transform: translateY(0);
 }
 .feature-item {
   flex-basis: 33.33%;
