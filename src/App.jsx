@@ -4,26 +4,34 @@ import {
   RouterProvider,
   Route,
   Link,
+  Routes,
+  BrowserRouter,
 } from "react-router-dom";
 import Home from "./Components/Home";
 import ErrorPage from "./Components/ErrorPage";
 import Contactus from "./Components/Contactus";
+import Test from "./Components/Test";
+import Questions from "./Components/Questions";
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
+  {},
 
-  {
-    path: "*",
-    element: <ErrorPage />,
-  },
+  {},
   { path: "/contactus", element: <Contactus /> },
+  { path: "/test", element: <Test /> },
+  { path: "/test/Questions", element: <Questions /> },
 ]);
 function App() {
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="*" element={<ErrorPage />}></Route>
+          <Route exact path="" element={<Home />}></Route>
+          <Route exact path="/test" element={<Test />}></Route>
+          <Route exact path="/test/Questions" element={<Questions />}></Route>
+          <Route exact path="/contactus" element={<Contactus />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

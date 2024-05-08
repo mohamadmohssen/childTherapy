@@ -43,58 +43,10 @@ const Navbar = () => {
             }`}
           >
             <ul className="navbar-nav mx-auto">
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link"
-                  href="#"
-                  role="button"
-                  onClick={() => toggleDropdown("homepage")}
-                  aria-haspopup="true"
-                  aria-expanded={dropdownOpen["homepage"]}
-                >
-                  homepage <FaAngleDown />
+              <li className="nav-item">
+                <a className="nav-link" href="/Test">
+                  Test
                 </a>
-                <div
-                  className={`dropdown-menu ${
-                    dropdownOpen["homepage"] ? "show" : ""
-                  }`}
-                >
-                  <a className="dropdown-item" href="index-full.html">
-                    Homepage Full Width
-                  </a>
-
-                  <a className="dropdown-item" href="index-full-left.html">
-                    Homepage Full With Left Sidebar
-                  </a>
-
-                  <a className="dropdown-item" href="index-full-right.html">
-                    Homepage Full With Right Sidebar
-                  </a>
-
-                  <a className="dropdown-item" href="index-list.html">
-                    Homepage List Style
-                  </a>
-
-                  <a className="dropdown-item" href="index-list-left.html">
-                    Homepage List With Left Sidebar
-                  </a>
-
-                  <a className="dropdown-item" href="index-list-right.html">
-                    Homepage List With Right Sidebar
-                  </a>
-
-                  <a className="dropdown-item" href="index-grid.html">
-                    Homepage Grid Style
-                  </a>
-
-                  <a className="dropdown-item" href="index-grid-left.html">
-                    Homepage Grid With Left Sidebar
-                  </a>
-
-                  <a className="dropdown-item" href="index-grid-right.html">
-                    Homepage Grid With Right Sidebar
-                  </a>
-                </div>
               </li>
               <li className="nav-item dropdown">
                 <a
