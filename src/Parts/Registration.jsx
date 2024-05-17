@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../css/registration.css";
 import { Link } from "react-router-dom";
 const Registration = () => {
+  const [value, setValues] = useState({});
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
@@ -10,9 +12,7 @@ const Registration = () => {
   const handleInput = (e) => {
     setValues((prev) => ({ ...prev, [e.target.name]: [e.target.value] }));
   };
-
-  const [value, setValues] = useState({});
-
+  console.log(value);
   return (
     <body className="body-registration">
       <div className="container container-registration">
@@ -68,15 +68,13 @@ const Registration = () => {
                   />
                 </div>
                 <div className="input-field">
-                  <label htmlFor="gender" onChange={handleInput} name="Gender">
-                    Gender
-                  </label>
-                  <select required>
-                    <option disabled selected>
+                  <label htmlFor="gender">Gender</label>
+                  <select required onChange={handleInput} name="gender">
+                    <option disabled value="">
                       Select gender
                     </option>
-                    <option>Male</option>
-                    <option>Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
                   </select>
                 </div>
                 <div className="input-field">
