@@ -7,7 +7,7 @@
     background:  #AEE4EA;
 }
 .container-registration{
-    margin-top: 7rem !important;
+    margin-top: 4.5rem !important;
     position: relative;
     width: 100%;
     border-radius: 6px;
@@ -35,7 +35,7 @@
 .container-registration .form-registration{
     position: relative;
     margin-top: 16px;
-    min-height: 490px;
+    min-height: 120px;
     background-color: #fff;
     overflow: hidden;
 }
