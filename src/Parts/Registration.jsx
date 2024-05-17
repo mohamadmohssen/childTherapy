@@ -92,7 +92,7 @@ const Registration = () => {
                 <div className="input-field">
                   <label htmlFor="gender">Gender</label>
                   <select required onChange={handleInput} name="gender">
-                    <option disabled value="">
+                    <option disabled selected value="">
                       Select gender
                     </option>
                     <option value={1}>Male</option>
