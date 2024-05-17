@@ -1,18 +1,40 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../css/registration.css";
-import { Link } from "react-router-dom";
-const Registration = () => {
-  const [value, setValues] = useState({});
 
-  const handleSubmit = (e) => {
+const Registration = () => {
+  const [values, setValues] = useState({});
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = new FormData(e.target);
-    console.log(Object.fromEntries(data.entries()));
+
+    const data = {
+      full_name: values.full_name,
+      mother_name: values.mother_name,
+      DOB: values.DOB,
+      phone_number1: values.phone_number1,
+      phone_number2: values.phone_number2,
+      gender: values.gender,
+      age: values.age,
+      val_id: values.val_id,
+      city: values.city,
+    };
+
+    try {
+      await axios.post("api/admin/addUser", data);
+      navigate("/test/Questions");
+    } catch (error) {
+      console.error("Error submitting registration:", error);
+    }
   };
+
   const handleInput = (e) => {
-    setValues((prev) => ({ ...prev, [e.target.name]: [e.target.value] }));
+    setValues({ ...values, [e.target.name]: e.target.value });
   };
-  console.log(value);
+
+  console.log(values);
   return (
     <body className="body-registration">
       <div className="container container-registration">
@@ -23,34 +45,34 @@ const Registration = () => {
               <span className="title">Personal Details</span>
               <div className="fields">
                 <div className="input-field">
-                  <label htmlFor="name">
+                  <label htmlFor="full_name">
                     <strong> Full Name </strong>
                   </label>
                   <input
                     onChange={handleInput}
-                    name="Full Name"
+                    name="full_name"
                     type="text"
                     placeholder="Enter your name"
                     required
                   />
                 </div>
                 <div className="input-field">
-                  <label htmlFor="mothername">
+                  <label htmlFor="mother_name">
                     <strong> Mother Name</strong>
                   </label>
                   <input
                     onChange={handleInput}
-                    name="MotherName"
+                    name="mother_name"
                     type="text"
                     placeholder="Enter the Mother name"
                     required
                   />
                 </div>
                 <div className="input-field">
-                  <label htmlFor="dob">Date of Birth</label>
+                  <label htmlFor="DOB">Date of Birth</label>
                   <input
                     onChange={handleInput}
-                    name="dob"
+                    name="DOB"
                     type="date"
                     placeholder="Enter birth date"
                     required
@@ -58,10 +80,10 @@ const Registration = () => {
                 </div>
 
                 <div className="input-field">
-                  <label htmlFor="mobile">Mobile Number</label>
+                  <label htmlFor="phone_number1">Mobile Number</label>
                   <input
                     onChange={handleInput}
-                    name="phonenumber"
+                    name="phone_number1"
                     type="number"
                     placeholder="Enter mobile number"
                     required
@@ -73,77 +95,60 @@ const Registration = () => {
                     <option disabled value="">
                       Select gender
                     </option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option value={1}>Male</option>
+                    <option value={0}>Female</option>
                   </select>
                 </div>
                 <div className="input-field">
-                  <label htmlFor="numberofmonth">Age in month</label>
+                  <label htmlFor="age">Age in month</label>
                   <input
-                    name="ageinmounth"
+                    name="age"
                     type="number"
                     placeholder="Age in month"
+                    onChange={handleInput}
                     required
                   />
                 </div>
               </div>
             </div>
             <div className="details ID">
-              <span className="title">Identity Details</span>
               <div className="fields">
                 <div className="input-field">
-                  <label htmlFor="idType">ID Type</label>
+                  <label htmlFor="phone_number2">Mobile Number two</label>
                   <input
                     type="text"
-                    name="idnumber"
-                    placeholder="Enter ID type"
+                    name="phone_number2"
+                    placeholder="Enter Second Mobile Number"
+                    onChange={handleInput}
                     required
                   />
                 </div>
                 <div className="input-field">
-                  <label htmlFor="idNumber">ID Number</label>
-                  <input type="number" placeholder="Enter ID number" required />
+                  <label htmlFor="val_id">ID Number</label>
+                  <input
+                    type="number"
+                    placeholder="Enter ID number"
+                    name="val_id"
+                    onChange={handleInput}
+                    required
+                  />
                 </div>
                 <div className="input-field">
-                  <label htmlFor="issuedAuthority">Issued Authority</label>
+                  <label htmlFor="city">
+                    <strong>City</strong>
+                  </label>
                   <input
-                    name="idnumber2"
+                    onChange={handleInput}
+                    name="city"
                     type="text"
-                    placeholder="Enter issued authority"
-                    required
-                  />
-                </div>
-                <div className="input-field">
-                  <label htmlFor="issuedState">Issued State</label>
-                  <input
-                    name="issued"
-                    type="text"
-                    placeholder="Enter issued state"
-                    required
-                  />
-                </div>
-                <div className="input-field">
-                  <label htmlFor="issuedDate">Issued Date</label>
-                  <input
-                    name="issueddata"
-                    type="date"
-                    placeholder="Enter your issued date"
-                    required
-                  />
-                </div>
-                <div className="input-field">
-                  <label htmlFor="expiryDate">Expiry Date</label>
-                  <input
-                    name="exdate"
-                    type="date"
-                    placeholder="Enter expiry date"
+                    placeholder="Enter the city"
                     required
                   />
                 </div>
               </div>
 
               <div className="text-center">
-                <button className="submit">
+                <button className="submit" variant="primary" type="submit">
                   <span className="">Next</span>
                 </button>
               </div>
