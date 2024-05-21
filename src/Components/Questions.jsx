@@ -1,11 +1,15 @@
 import React from "react";
 import Navbar from "../Parts/Navbar";
+import Question from "../Parts/Question";
+import Footer from "../Parts/Footer";
 
 const Questions = () => {
   return (
-    <div>
+    <>
       <Navbar />
-    </div>
+      <Question />
+      <Footer />
+    </>
   );
 };
 

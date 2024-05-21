@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/contact.css";
 import handleSubmit from "react";
+
 import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
 
 const Contact = () => {
@@ -33,7 +34,7 @@ const Contact = () => {
                             <input
                               type="hidden"
                               name="access_key"
-                              value="1f9569d0-36f9-453e-a47e-df82f31d28bc"
+                              value="b571a6d0-c79f-49e8-9234-b6c854e6d458"
                             ></input>
                             <div className="form-group">
                               <label className="label" htmlFor="name">
@@ -42,9 +43,9 @@ const Contact = () => {
                               <input
                                 type="text"
                                 className="form-control"
-                                name="name"
+                                name="Full-Name"
                                 id="name"
-                                placeholder="Name"
+                                placeholder="Full-Name"
                                 required
                               />
                             </div>
@@ -123,8 +124,8 @@ const Contact = () => {
                         </div>
                         <div className="text pl-3">
                           <p>
-                            <span>Address:</span> Islamic University Of Lebanon
-                            Khaldeh
+                            <span>Address:</span>Beirut - Airport Road - Al
+                            Atrash Center - 2 floor
                           </p>
                         </div>
                       </div>
@@ -137,7 +138,7 @@ const Contact = () => {
                         <div className="text pl-3">
                           <p>
                             <span>Phone:</span>{" "}
-                            <a href="tel://1234567920">+ 1235 2355 98</a>
+                            <a href="tel://0096181431745">+961 81 431 745</a>
                           </p>
                         </div>
                       </div>
@@ -149,9 +150,9 @@ const Contact = () => {
                         </div>
                         <div className="text pl-3">
                           <p>
-                            <span>Email:</span>{" "}
-                            <a href="mailto:info@yoursite.com">
-                              info@yoursite.com
+                            <span>Email:</span>
+                            <a href="mailto:samaideleb@gmail.com">
+                              samaideleb@gmail.com
                             </a>
                           </p>
                         </div>

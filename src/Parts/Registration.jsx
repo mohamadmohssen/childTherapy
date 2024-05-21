@@ -39,7 +39,7 @@ const Registration = () => {
     <body className="body-registration">
       <div className="container container-registration">
         <header>Registration</header>
-        <form action="" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className="form first form-registration">
             <div className="details personal">
               <span className="title">Personal Details</span>
