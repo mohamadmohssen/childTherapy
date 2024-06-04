@@ -10,6 +10,17 @@
   }
 }
 
+.title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
+  font-weight: 100;
+  color: #1b655d;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+ 
+  /* Add any other styling you'd like */
+}
+
 .banner {
   position: relative;
   overflow: hidden;

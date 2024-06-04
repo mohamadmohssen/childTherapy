@@ -28,13 +28,8 @@ const Navbar = () => {
     >
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-white">
-          <a className="navbar-brand order-1" href="index.html">
-            <img
-              className="img-fluid"
-              width="100px"
-              src="images/logo.png"
-              alt="Logo"
-            />
+          <a className="navbar-brand order-1" href="/">
+            <p className="title">RAISE</p>
           </a>
 
           <div
@@ -48,30 +43,10 @@ const Navbar = () => {
                   Test
                 </a>
               </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link"
-                  href="#"
-                  role="button"
-                  onClick={() => toggleDropdown("about")}
-                  aria-haspopup="true"
-                  aria-expanded={dropdownOpen["about"]}
-                >
-                  About <FaAngleDown />
+              <li className="nav-item">
+                <a className="nav-link" href="/aboutus">
+                  About Us
                 </a>
-                <div
-                  className={`dropdown-menu ${
-                    dropdownOpen["about"] ? "show" : ""
-                  }`}
-                >
-                  <a className="dropdown-item" href="about-me.html">
-                    About Me
-                  </a>
-
-                  <a className="dropdown-item" href="about-us.html">
-                    About Us
-                  </a>
-                </div>
               </li>
 
               <li className="nav-item">
@@ -80,7 +55,7 @@ const Navbar = () => {
                 </a>
               </li>
 
-              <li className="nav-item dropdown">
+              {/* <li className="nav-item dropdown">
                 <a
                   className="nav-link"
                   href="#"
@@ -140,13 +115,13 @@ const Navbar = () => {
                     404 Page
                   </a>
                 </div>
-              </li>
+              </li> */}
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link" href="shop.html">
                   Shop
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -158,7 +133,7 @@ const Navbar = () => {
               <option id="en" value="" selected>
                 En
               </option>
-              <option id="fr" value="">
+              <option id="ar" value="">
                 Fr
               </option>
             </select>

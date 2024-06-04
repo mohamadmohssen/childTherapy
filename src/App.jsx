@@ -12,6 +12,7 @@ import ErrorPage from "./Components/ErrorPage";
 import Contactus from "./Components/Contactus";
 import Test from "./Components/Test";
 import Questions from "./Components/Questions";
+import Aboutus from "./Components/Aboutus";
 const router = createBrowserRouter([
   {},
 
@@ -30,6 +31,7 @@ function App() {
           <Route exact path="/test" element={<Test />}></Route>
           <Route exact path="/test/Questions" element={<Questions />}></Route>
           <Route exact path="/contactus" element={<Contactus />}></Route>
+          <Route exact path="/aboutus" element={<Aboutus />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
