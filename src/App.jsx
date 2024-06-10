@@ -1,9 +1,8 @@
 import React from "react";
+import "./i18n";
 import {
   createBrowserRouter,
-  RouterProvider,
   Route,
-  Link,
   Routes,
   BrowserRouter,
 } from "react-router-dom";

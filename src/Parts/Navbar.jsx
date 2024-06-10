@@ -3,7 +3,33 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import { FaAngleDown, FaAnglesDown, FaBars, FaClock } from "react-icons/fa6";
 import "../css/navbar.css";
 import React, { useState } from "react";
+import { Fragment } from "react";
+import { useTranslation } from "react-i18next";
+
+const Testi18n = () => {
+  return (
+    <Fragment>
+      <div>
+        <button onClick={changeEn}>en</button>
+        <button onClick={changefr}>fr</button>
+      </div>
+      <div>
+        <h1>{t("Welcome to React")} </h1>
+        <h1>{t("محمود")}</h1>
+      </div>
+    </Fragment>
+  );
+};
+
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
+  const changeEn = () => {
+    i18n.changeLanguage("en");
+  };
+  const changefr = () => {
+    i18n.changeLanguage("fr");
+  };
+
   const [collapsed, setCollapsed] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState({});
 
@@ -18,44 +44,45 @@ const Navbar = () => {
     }));
   };
   return (
-    <header
-      className="navigation fixed-top"
-      style={{
-        backgroundColor: "white",
-        paddingBottom: 0,
-        display: "inline-block",
-      }}
-    >
-      <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-white">
-          <a className="navbar-brand order-1" href="/">
-            <p className="title">RAISE</p>
-          </a>
+    <Fragment>
+      <header
+        className="navigation fixed-top"
+        style={{
+          backgroundColor: "white",
+          paddingBottom: 0,
+          display: "inline-block",
+        }}
+      >
+        <div className="container">
+          <nav className="navbar navbar-expand-lg navbar-white">
+            <a className="navbar-brand order-1" href="/">
+              <p className="title">RAISE</p>
+            </a>
 
-          <div
-            className={`collapse navbar-collapse text-center order-lg-2 order-3 ${
-              collapsed ? "" : "show"
-            }`}
-          >
-            <ul className="navbar-nav mx-auto">
-              <li className="nav-item">
-                <a className="nav-link" href="/Test">
-                  Test
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/aboutus">
-                  About Us
-                </a>
-              </li>
+            <div
+              className={`collapse navbar-collapse text-center order-lg-2 order-3 ${
+                collapsed ? "" : "show"
+              }`}
+            >
+              <ul className="navbar-nav mx-auto">
+                <li className="nav-item">
+                  <a className="nav-link" href="/Test">
+                    Test
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/aboutus">
+                    About Us
+                  </a>
+                </li>
 
-              <li className="nav-item">
-                <a className="nav-link" href="/contactus">
-                  Contact
-                </a>
-              </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/contactus">
+                    Contact Us
+                  </a>
+                </li>
 
-              {/* <li className="nav-item dropdown">
+                {/* <li className="nav-item dropdown">
                 <a
                   className="nav-link"
                   href="#"
@@ -117,39 +144,40 @@ const Navbar = () => {
                 </div>
               </li> */}
 
-              {/* <li className="nav-item">
+                {/* <li className="nav-item">
                 <a className="nav-link" href="shop.html">
                   Shop
                 </a>
               </li> */}
-            </ul>
-          </div>
+              </ul>
+            </div>
 
-          <div className="order-2 order-lg-3 d-flex align-items-center">
-            <select
-              className="m-2 border-0 bg-transparent"
-              id="select-language"
+            <div className="order-2 order-lg-3 d-flex align-items-center">
+              <select
+                className="m-2 border-0 bg-transparent"
+                id="select-language"
+              >
+                <option id="en" value="" onClick={changeEn} selected>
+                  En
+                </option>
+                <option id="ar" value="" onClick={changefr}>
+                  Ar
+                </option>
+              </select>
+            </div>
+            <button
+              className="navbar-toggler collapsed order-2"
+              type="button"
+              onClick={toggleNavbar}
+              aria-expanded={!collapsed}
+              aria-label="Toggle navigation"
             >
-              <option id="en" value="" selected>
-                En
-              </option>
-              <option id="ar" value="">
-                Fr
-              </option>
-            </select>
-          </div>
-          <button
-            className="navbar-toggler collapsed order-2"
-            type="button"
-            onClick={toggleNavbar}
-            aria-expanded={!collapsed}
-            aria-label="Toggle navigation"
-          >
-            <FaBars />
-          </button>
-        </nav>
-      </div>
-    </header>
+              <FaBars />
+            </button>
+          </nav>
+        </div>
+      </header>{" "}
+    </Fragment>
   );
 };
 

@@ -7,6 +7,7 @@ function Contactus() {
     <>
       <Navbar />
       <Contact />
+
       <Footer />
     </>
   );

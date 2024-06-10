@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../css/registration.css";
 
 const Registration = () => {
@@ -21,11 +23,21 @@ const Registration = () => {
       val_id: values.val_id,
       city: values.city,
     };
-
+    console.log(data);
     try {
-      await axios.post("api/admin/addUser", data);
-      navigate("/test/Questions");
+      await axios.post("api/user/addUser", data);
+      toast.success("Registration successful!", {
+        position: "top-center",
+        onClose: () => {
+          console.log("Toast closed");
+          navigate("/test/Questions");
+        },
+        autoClose: 2000, // Close the toast after 2 seconds
+      });
     } catch (error) {
+      toast.error("Error submitting registration.", {
+        position: "top-center",
+      });
       console.error("Error submitting registration:", error);
     }
   };
@@ -36,7 +48,8 @@ const Registration = () => {
 
   console.log(values);
   return (
-    <body className="body-registration">
+    <div className="body-registration">
+      <ToastContainer />
       <div className="container container-registration">
         <header>Registration</header>
         <form onSubmit={handleSubmit}>
@@ -156,7 +169,7 @@ const Registration = () => {
           </div>
         </form>
       </div>
-    </body>
+    </div>
   );
 };
 
