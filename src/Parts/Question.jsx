@@ -79,39 +79,47 @@ const Question = () => {
   );
 
   return (
-    <div className="questions-container">
+    <div className="questions-container" style={{ marginTop: "5.5rem" }}>
+      <h1>Fill the questions here.</h1>
+
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       {currentQuestions.map((question) => (
-        <div
-          key={question.question_id}
-          className="question-card"
-          style={{ borderTop: "3px solid #00b999" }}
-        >
-          <p className="question-text">{question.question_english}</p>
-          <p className="question-text">{question.question_arabic}</p>
-          <div className="answer-radio">
-            <label className="radio-option">
-              <input
-                type="radio"
-                name={`question-${question.question_id}`}
-                value="yes"
-                checked={userAnswers[question.question_id] === 1}
-                onChange={() => handleAnswerChange(question.question_id, "yes")}
-              />
-              Yes
-            </label>
-            <label className="radio-option">
-              <input
-                type="radio"
-                name={`question-${question.question_id}`}
-                value="no"
-                checked={userAnswers[question.question_id] === 0}
-                onChange={() => handleAnswerChange(question.question_id, "no")}
-              />
-              No
-            </label>
+        <>
+          <div
+            key={question.question_id}
+            className="question-card"
+            style={{ borderTop: "3px solid #00b999" }}
+          >
+            <p className="question-text">{question.question_english}</p>
+            <p className="question-text">{question.question_arabic}</p>
+            <div className="answer-radio">
+              <label className="radio-option">
+                <input
+                  type="radio"
+                  name={`question-${question.question_id}`}
+                  value="yes"
+                  checked={userAnswers[question.question_id] === 1}
+                  onChange={() =>
+                    handleAnswerChange(question.question_id, "yes")
+                  }
+                />
+                Yes
+              </label>
+              <label className="radio-option">
+                <input
+                  type="radio"
+                  name={`question-${question.question_id}`}
+                  value="no"
+                  checked={userAnswers[question.question_id] === 0}
+                  onChange={() =>
+                    handleAnswerChange(question.question_id, "no")
+                  }
+                />
+                No
+              </label>
+            </div>
           </div>
-        </div>
+        </>
       ))}
       <div className="button-container">
         <button
