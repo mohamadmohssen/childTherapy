@@ -23,7 +23,8 @@ const Registration = () => {
     };
 
     try {
-      await axios.post("api/admin/addUser", data);
+      console.log(data);
+      await axios.post("/api/user/addUser", data);
       navigate("/test/Questions");
     } catch (error) {
       console.error("Error submitting registration:", error);

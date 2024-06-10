@@ -13,6 +13,7 @@ import Contactus from "./Components/Contactus";
 import Test from "./Components/Test";
 import Questions from "./Components/Questions";
 import Aboutus from "./Components/Aboutus";
+import Question from "./Parts/Question";
 const router = createBrowserRouter([
   {},
 
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="/test/Questions" element={<Questions />}></Route>
           <Route exact path="/contactus" element={<Contactus />}></Route>
           <Route exact path="/aboutus" element={<Aboutus />}></Route>
+          <Route exact path="/answer" element={<Question />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
