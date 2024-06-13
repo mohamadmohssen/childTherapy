@@ -12,7 +12,7 @@
   background: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 10px 0;
+  margin: 5px 0;
   padding: 20px;
   width: 100%;
   max-width: 600px;
@@ -52,6 +52,11 @@
   display: flex;
   gap: 10px;
   margin-top: 20px;
+}
+.question-count {
+  margin-right: 20px;
+  font-weight: bold;
+  align-content: center;
 }
 
 .prev-button,
