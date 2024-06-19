@@ -56,7 +56,7 @@ const Navbar = () => {
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-white">
             <a className="navbar-brand order-1" href="/">
-              <p className="title">RAISE</p>
+              <img src="/src/images/navlogo.jpg" alt="" width={100} />
             </a>
 
             <div

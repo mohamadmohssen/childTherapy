@@ -16,26 +16,21 @@ const Header = () => {
                 <div className="block">
                   <div className="divider mb-3"></div>
 
-                  <span className="text-uppercase text-sm letter-spacing ">
-                    Total Health care solution
-                  </span>
-                  <h1 className="mb-3 mt-3">
-                    Your most trusted health partner
-                  </h1>
+                  <span className="text-uppercase text-sm letter-spacing "></span>
+                  <h1 className="mb-3 mt-3">Welcome to RAISE </h1>
 
                   <p className="mb-4 pr-5">
-                    A repudiandae ipsam labore ipsa voluptatum quidem quae
-                    laudantium quisquam aperiam maiores sunt fugit, deserunt rem
-                    suscipit placeat.
+                    Your Partner for Diagnosing, Evaluating, and Following Up on
+                    Speech and Language Pathologies.
                   </p>
-                  <div className="btn-container ">
+                  {/* <div className="btn-container ">
                     <Link
                       to="/content"
                       className="btn btn-main-2 btn-icon btn-round-full"
                     >
                       Make appointment <FaShield />
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

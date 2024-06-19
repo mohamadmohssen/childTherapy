@@ -30,7 +30,7 @@ function Footer() {
                 <h4>Quick Links</h4>
                 <ul>
                   <li>
-                    <a href="/test">test</a>
+                    <a href="/test">Test</a>
                   </li>
                   <li>
                     <a href="/contactus">Contact Us</a>
@@ -50,7 +50,7 @@ function Footer() {
                       style={{ color: "black" }}
                       href="mailto:samaideleb@gmail.com"
                     >
-                      <span>Mail:</span> samaideleb@gmail.com{" "}
+                      <span>Mail:</span> samaideleb@gmail.com
                     </a>
                   </p>
                 </p>
@@ -65,7 +65,7 @@ function Footer() {
           <div className="row">
             <div className="col-lg-12 text-center">
               <div className="footer-copy">
-                &copy; Copyright , Designed &amp; Developed by {"IUL "}
+                &copy; Copyright , Designed &amp; Developed by {"IUL"}
               </div>
             </div>
           </div>
