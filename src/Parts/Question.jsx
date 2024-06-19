@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../css/Questions.css";
 
@@ -10,16 +11,16 @@ const Question = () => {
   const [loading, setLoading] = useState(true);
   const [isFinished, setIsFinished] = useState(false);
   const [importantYesCount, setImportantYesCount] = useState(0);
-
+  const { id, testCounter } = useParams();
   const questionsPerPage = 15;
-  const userId = 1;
-
+  const userId = id;
+  console.log("the id is:", id, "the tstcount is", testCounter);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [questionsResponse, userAnswersResponse] = await Promise.all([
           axios.get("/api/question/getAllQuestions"),
-          axios.get(`/api/userquestion/answers/${userId}`),
+          axios.get(`/api/userquestion/answers/${userId}/${testCounter}`),
         ]);
 
         const userAnswersData = userAnswersResponse.data.reduce(
@@ -55,7 +56,7 @@ const Question = () => {
     const answers = Object.keys(userAnswers).map((questionId) => ({
       questionId: parseInt(questionId, 10),
       answer: !!userAnswers[questionId],
-      testCounter: 2,
+      testCounter: parseInt(testCounter, 10),
     }));
 
     try {
