@@ -25,12 +25,14 @@ const Registration = () => {
     };
     console.log(data);
     try {
-      await axios.post("api/user/addUser", data);
+      const response = await axios.post("api/user/addUser", data);
       toast.success("Registration successful!", {
         position: "top-center",
         onClose: () => {
           console.log("Toast closed");
-          navigate("/test/Questions");
+          navigate(
+            `/test/Questions/${response.data.user_id}/${response.data.test_counter}`
+          );
         },
         autoClose: 2000, // Close the toast after 2 seconds
       });

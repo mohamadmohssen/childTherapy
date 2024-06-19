@@ -29,7 +29,11 @@ function App() {
           <Route exact path="*" element={<ErrorPage />}></Route>
           <Route exact path="" element={<Home />}></Route>
           <Route exact path="/test" element={<Test />}></Route>
-          <Route exact path="/test/Questions" element={<Questions />}></Route>
+          <Route
+            exact
+            path="/test/Questions/:id/:testCounter"
+            element={<Questions />}
+          ></Route>
           <Route exact path="/contactus" element={<Contactus />}></Route>
           <Route exact path="/aboutus" element={<Aboutus />}></Route>
           <Route exact path="/answer" element={<Question />}></Route>
