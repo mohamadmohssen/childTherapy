@@ -23,7 +23,12 @@ const Registration = () => {
       val_id: values.val_id,
       city: values.city,
     };
-    console.log(data);
+    if (data.phone_number1.length < 8 || data.phone_number2.length < 8) {
+      toast.error("Phone number must be at least 8 characters long.", {
+        position: "top-center",
+      });
+      return; // Exit early if validation fails
+    }
     try {
       const response = await axios.post("api/user/addUser", data);
       toast.success("Registration successful!", {
