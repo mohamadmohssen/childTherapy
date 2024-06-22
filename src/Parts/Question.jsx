@@ -4,17 +4,51 @@ import axios from "axios";
 import "../css/Questions.css";
 
 const Question = () => {
+  const [user, setUser] = useState(null);
   const [questions, setQuestions] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [userAnswers, setUserAnswers] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  const [risk, setRisk] = useState(1);
+  const [highRisk, setHighRisk] = useState(1);
+  const [min, setMin] = useState();
+  const [max, setMax] = useState();
+  const [ageDataMin, setAgeDataMin] = useState([]); // State to store scores and types by age
+  const [ageDataMax, setAgeDataMax] = useState([]);
   const [isFinished, setIsFinished] = useState(false);
   const [importantYesCount, setImportantYesCount] = useState(0);
   const { id, testCounter } = useParams();
   const questionsPerPage = 15;
   const userId = id;
-  console.log("the id is:", id, "the tstcount is", testCounter);
+
+  // Function to fetch data by age and handle setting state
+  const fetchDataByAge = async (age, setState) => {
+    try {
+      const response = await axios.get(`/api/type/types/dg/age/${age}`);
+      if (response.status === 200) {
+        setState(response.data); // Use functional update to set the state
+      } else {
+        setError("Failed to fetch data by age");
+      }
+    } catch (error) {
+      console.error("Error fetching data by age:", error);
+      setError("Failed to fetch data by age");
+    }
+  };
+
+  const fetchUser = async (userid) => {
+    try {
+      const response = await axios.get(`/api/user/getpatient/${userid}`);
+      return response.data; // Return the data directly
+    } catch (error) {
+      console.error("Error fetching user:", error);
+      setError("Failed to fetch user by id");
+      return null;
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -41,7 +75,7 @@ const Question = () => {
     };
 
     fetchData();
-  }, [userId]);
+  }, [userId, testCounter]);
 
   const handleAnswerChange = (questionId, value) => {
     const answer = value === "yes";
@@ -64,7 +98,6 @@ const Question = () => {
         userId,
         answers,
       });
-      console.log("User answers saved successfully.");
     } catch (error) {
       console.error("Error saving user answers:", error);
     }
@@ -83,14 +116,85 @@ const Question = () => {
     });
     return results;
   };
+
   const calculateImportantYesCount = () => {
-    // Assuming questions marked with `is_important` should be counted
+    // Assuming questions marked with is_important should be counted
     return questions.reduce((count, question) => {
       if (question.is_important && userAnswers[question.question_id]) {
         return count + 1;
       }
       return count;
     }, 0);
+  };
+
+  const calculateRisk = (score, minn, maxx) => {
+    console.log(minn, score, maxx);
+    if (minn && maxx) {
+      if (score > minn && score <= maxx) {
+        return (
+          <p style={{ color: "#FD9A24" }}>
+            <b>High Risk</b>
+          </p>
+        );
+      } else if (score > maxx) {
+        return (
+          <p style={{ color: "green" }}>
+            <b>Normal</b>
+          </p>
+        );
+      } else if (score <= minn) {
+        return (
+          <p style={{ color: "red" }}>
+            <b>Very High Risk,</b> You should see a therapist
+          </p>
+        );
+      }
+    } else {
+      return <p>nooo</p>;
+    }
+  };
+
+  const fetchRisks = async () => {
+    try {
+      const response = await axios.get("/api/base");
+
+      if (response.status === 200 && response.data.length > 0) {
+        const data = response.data[0];
+
+        setRisk(data.risk);
+        setHighRisk(data.high_risk);
+        if (userId) {
+          const userData = await fetchUser(userId); // Await and fetch user data
+          if (userData) {
+            setUser(userData); // Set user state with fetched data
+            const minVal = data.highRisk * userData.age;
+            const maxVal = data.risk * userData.age;
+
+            // Function to round based on decimal part
+            function customRound(value) {
+              return value % 1 >= 0.5 ? Math.ceil(value) : Math.floor(value);
+            }
+
+            // Apply custom rounding
+            const roundedMinVal = customRound(minVal);
+            const roundedMaxVal = customRound(maxVal);
+            await fetchDataByAge(roundedMinVal, setAgeDataMin);
+            await fetchDataByAge(roundedMaxVal, setAgeDataMax);
+            // Compute min and max based on user age
+          } else {
+            console.error("Failed to fetch user data");
+          }
+        }
+      } else {
+        console.error("No data found or error fetching data");
+        setError("No data available or error fetching data");
+      }
+    } catch (error) {
+      console.error("Error during fetch:", error);
+      setError("Failed to get the risk and high risk data");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleNextPage = async () => {
@@ -116,7 +220,6 @@ const Question = () => {
     } else {
       try {
         await axios.post(`/api/user/finish/${userId}`);
-        console.log("User marked as finished.");
 
         // Calculate the results by type
         const resultsByType = calculateResultsByType();
@@ -126,6 +229,7 @@ const Question = () => {
           userId,
           resultsByType,
         });
+
         const importantYesCount = calculateImportantYesCount();
         setImportantYesCount(importantYesCount);
 
@@ -134,6 +238,7 @@ const Question = () => {
           userId,
           importantYesCount,
         });
+
         setIsFinished(true);
       } catch (error) {
         console.error("Error updating user to finished:", error);
@@ -154,6 +259,10 @@ const Question = () => {
   const answeredQuestionsCount = Object.keys(userAnswers).length;
   const totalQuestionsCount = questions.length;
 
+  useEffect(() => {
+    fetchRisks();
+  }, []); // Run only once on component mount
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -164,6 +273,11 @@ const Question = () => {
         <h1>Finished!</h1>
         <p>You have answered all the questions. Thank you!</p>
         <p>You answered "Yes" to {importantYesCount} important questions.</p>
+        {calculateRisk(
+          importantYesCount,
+          ageDataMin[0].score,
+          ageDataMax[0].score
+        )}
         <p>Results have been saved to your profile.</p>
       </div>
     );
