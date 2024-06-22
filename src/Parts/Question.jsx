@@ -27,6 +27,7 @@ const Question = () => {
   const fetchDataByAge = async (age, setState) => {
     try {
       const response = await axios.get(`/api/type/types/dg/age/${age}`);
+
       if (response.status === 200) {
         setState(response.data); // Use functional update to set the state
       } else {
@@ -153,34 +154,43 @@ const Question = () => {
       return <p>nooo</p>;
     }
   };
-
   const fetchRisks = async () => {
+    setLoading(true); // Start loading state
+
     try {
       const response = await axios.get("/api/base");
 
       if (response.status === 200 && response.data.length > 0) {
         const data = response.data[0];
+        console.log("Fetched risk data:", data);
 
         setRisk(data.risk);
         setHighRisk(data.high_risk);
+
         if (userId) {
-          const userData = await fetchUser(userId); // Await and fetch user data
+          const userData = await fetchUser(userId); // Fetch user data
           if (userData) {
             setUser(userData); // Set user state with fetched data
-            const minVal = data.highRisk * userData.age;
+
+            // Calculate minVal and maxVal based on fetched values
+            const minVal = data.high_risk * userData.age;
             const maxVal = data.risk * userData.age;
+            console.log(`Calculated minVal: ${minVal}, maxVal: ${maxVal}`);
 
             // Function to round based on decimal part
             function customRound(value) {
               return value % 1 >= 0.5 ? Math.ceil(value) : Math.floor(value);
             }
 
-            // Apply custom rounding
             const roundedMinVal = customRound(minVal);
             const roundedMaxVal = customRound(maxVal);
+            console.log(
+              `Rounded minVal: ${roundedMinVal}, maxVal: ${roundedMaxVal}`
+            );
+
+            // Fetch data by age using rounded values
             await fetchDataByAge(roundedMinVal, setAgeDataMin);
             await fetchDataByAge(roundedMaxVal, setAgeDataMax);
-            // Compute min and max based on user age
           } else {
             console.error("Failed to fetch user data");
           }
@@ -193,7 +203,7 @@ const Question = () => {
       console.error("Error during fetch:", error);
       setError("Failed to get the risk and high risk data");
     } finally {
-      setLoading(false);
+      setLoading(false); // End loading state
     }
   };
 
@@ -261,7 +271,7 @@ const Question = () => {
 
   useEffect(() => {
     fetchRisks();
-  }, []); // Run only once on component mount
+  }, [userId]);
 
   if (loading) {
     return <p>Loading...</p>;
