@@ -2,6 +2,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "../css/attachedcards.css";
 import { useEffect } from "react";
+import { MdContactSupport } from "react-icons/md";
+import { RiSurveyLine } from "react-icons/ri";
+import { GiSandsOfTime } from "react-icons/gi";
+
 import { FaClock, FaUserDoctor } from "react-icons/fa6";
 const AttachedCards = () => {
   /*This use effect is for let the component float up when scrollin to it*/
@@ -45,16 +49,13 @@ const AttachedCards = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <FaUserDoctor />
+                  <MdContactSupport />
                 </div>
                 <span>24 Hours Service</span>
-                <h4 class="mb-3">Online Appoinment</h4>
-                <p class="mb-4">
-                  Get ALl time support for emergency.We have introduced the
-                  principle of family medicine.
-                </p>
-                <a href="appoinment.html" class="btn btn-main btn-round-full">
-                  Make a appoinment
+                <h4 class="mb-3">Get in touch </h4>
+                <p class="mb-4">You can Contact us all time</p>
+                <a href="/contactus" class="btn btn-main btn-round-full">
+                  Contact us
                 </a>
               </div>
 
@@ -70,36 +71,38 @@ const AttachedCards = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <FaClock />
+                  <RiSurveyLine />
                 </div>
-                <span>Timing schedule</span>
-                <h4 class="mb-3">Working Hours</h4>
-                <ul class="w-hours list-unstyled">
-                  <li class="d-flex justify-content-between">
-                    Sun - Wed : <span>8:00 - 17:00</span>
-                  </li>
-                  <li class="d-flex justify-content-between">
-                    Thu - Fri : <span>9:00 - 17:00</span>
-                  </li>
-                  <li class="d-flex justify-content-between">
-                    Sat - sun : <span>10:00 - 17:00</span>
-                  </li>
-                </ul>
+                <span>Questions</span>
+                <h4 class="mb-3"> Make Test </h4>
+                <p class="mb-4">You can Contact us all time</p>
+                <a href="/test" class="btn btn-main btn-round-full">
+                  Test
+                </a>
               </div>
 
               <div
                 class="feature-item mb-5 mb-lg-0"
                 style={{ backgroundColor: "#39cabb" }}
               >
+                <div
+                  class="feature-icon mb-4"
+                  style={{
+                    fontSize: "50px",
+                    display: "grid",
+                    justifyContent: "center",
+                  }}
+                >
+                  <GiSandsOfTime />
+                </div>
                 <div class="feature-icon mb-4">
                   <i class="icofont-support"></i>
                 </div>
-                <span>Emegency Cases</span>
-                <h4 class="mb-3">1-800-700-6200</h4>
+                <span>Comming Soon</span>
+                <h4 class="mb-3">New features</h4>
                 <p>
-                  Get ALl time support for emergency.We have introduced the
-                  principle of family medicine.Get Conneted with us for any
-                  urgency .
+                  Exciting new features are coming soon, including a variety of
+                  engaging questions!
                 </p>
               </div>
             </div>

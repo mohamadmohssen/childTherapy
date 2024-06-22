@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { FaShield } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import Navbar from "/src/Parts/Navbar";
 import AttachedCards from "./AttachedCards";
 const Header = () => {
   return (
@@ -23,14 +22,14 @@ const Header = () => {
                     Your Partner for Diagnosing, Evaluating, and Following Up on
                     Speech and Language Pathologies.
                   </p>
-                  {/* <div className="btn-container ">
+                  <div className="btn-container ">
                     <Link
-                      to="/content"
+                      to="/aboutus"
                       className="btn btn-main-2 btn-icon btn-round-full"
                     >
-                      Make appointment <FaShield />
+                      Discover more about us <FaShield />
                     </Link>
-                  </div> */}
+                  </div>
                 </div>
               </div>
             </div>

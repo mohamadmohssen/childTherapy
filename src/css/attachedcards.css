@@ -46,3 +46,19 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
 }
+.btn-main {
+  background-color: #2ba195; /* Button background color */
+  color: #ffffff; /* Button text color */
+  padding: 10px 20px; /* Button padding */
+  border-radius: 50px; /* Rounded corners */
+  text-transform: uppercase; /* Uppercase text */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+
+  &:hover {
+    background-color: #AEE4EA; /* Background color on hover */
+    transform: translateY(-5px); /* Slightly lift the button on hover */
+    text-decoration: none; /* Remove underline on hover */
+    color: #2ba195;
+  }
+}
