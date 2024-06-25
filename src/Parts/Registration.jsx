@@ -19,15 +19,24 @@ const Registration = () => {
       phone_number1: values.phone_number1,
       phone_number2: values.phone_number2,
       gender: values.gender,
-      age: values.age,
       val_id: values.val_id,
       city: values.city,
     };
-    if (data.phone_number1.length < 8 || data.phone_number2.length < 8) {
-      toast.error("Phone number must be at least 8 characters long.", {
-        position: "top-center",
-      });
-      return; // Exit early if validation fails
+    if (data.phone_number1) {
+      if (data.phone_number1.length < 8) {
+        toast.error("Phone number 1 must be at least 8 characters long.", {
+          position: "top-center",
+        });
+        return; // Exit early if validation fails
+      }
+    }
+    if (data.phone_number2) {
+      if (data.phone_number2.length < 8) {
+        toast.error("Phone number 2 must be at least 8 characters long.", {
+          position: "top-center",
+        });
+        return; // Exit early if validation fails
+      }
     }
     try {
       const response = await axios.post("api/user/addUser", data);
@@ -118,16 +127,6 @@ const Registration = () => {
                     <option value={1}>Male</option>
                     <option value={0}>Female</option>
                   </select>
-                </div>
-                <div className="input-field">
-                  <label htmlFor="age">Age in month</label>
-                  <input
-                    name="age"
-                    type="number"
-                    placeholder="Age in month"
-                    onChange={handleInput}
-                    required
-                  />
                 </div>
               </div>
             </div>
