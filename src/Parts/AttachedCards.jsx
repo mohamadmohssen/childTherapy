@@ -1,3 +1,4 @@
+// src/components/AttachedCards.jsx
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "../css/attachedcards.css";
@@ -5,10 +6,11 @@ import { useEffect } from "react";
 import { MdContactSupport } from "react-icons/md";
 import { RiSurveyLine } from "react-icons/ri";
 import { GiSandsOfTime } from "react-icons/gi";
+import { useTranslation } from "react-i18next";
 
-import { FaClock, FaUserDoctor } from "react-icons/fa6";
 const AttachedCards = () => {
-  /*This use effect is for let the component float up when scrollin to it*/
+  const { t } = useTranslation();
+
   useEffect(() => {
     const floatingComponents = document.querySelectorAll(".float-up-animation");
 
@@ -31,18 +33,19 @@ const AttachedCards = () => {
       observer.disconnect();
     };
   }, []);
+
   return (
-    <section class="features">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="feature-block d-lg-flex float-up-animation">
+    <section className="features">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="feature-block d-lg-flex float-up-animation">
               <div
-                class="feature-item mb-5 mb-lg-0"
+                className="feature-item mb-5 mb-lg-0"
                 style={{ backgroundColor: "#39cabb" }}
               >
                 <div
-                  class="feature-icon mb-4"
+                  className="feature-icon mb-4"
                   style={{
                     fontSize: "50px",
                     display: "grid",
@@ -51,20 +54,20 @@ const AttachedCards = () => {
                 >
                   <MdContactSupport />
                 </div>
-                <span>24 Hours Service</span>
-                <h4 class="mb-3">Get in touch </h4>
-                <p class="mb-4">You can Contact us all time</p>
-                <a href="/contactus" class="btn btn-main btn-round-full">
-                  Contact us
+                <span>{t("24 Hours Service")}</span>
+                <h4 className="mb-3">{t("Get in touch")}</h4>
+                <p className="mb-4">{t("You can contact us all the time")}</p>
+                <a href="/contactus" className="btn btn-main btn-round-full">
+                  {t("Contact Us")}
                 </a>
               </div>
 
               <div
-                class="feature-item mb-5 mb-lg-0"
+                className="feature-item mb-5 mb-lg-0"
                 style={{ backgroundColor: "#aeeae4" }}
               >
                 <div
-                  class="feature-icon mb-4"
+                  className="feature-icon mb-4"
                   style={{
                     fontSize: "50px",
                     display: "grid",
@@ -73,20 +76,20 @@ const AttachedCards = () => {
                 >
                   <RiSurveyLine />
                 </div>
-                <span>Questions</span>
-                <h4 class="mb-3"> Make Test </h4>
-                <p class="mb-4">You can Contact us all time</p>
-                <a href="/test" class="btn btn-main btn-round-full">
-                  Test
+                <span>{t("Questions")}</span>
+                <h4 className="mb-3">{t("Make Test")}</h4>
+                <p className="mb-4">{t("You can contact us all the time")}</p>
+                <a href="/test" className="btn btn-main btn-round-full">
+                  {t("Test")}
                 </a>
               </div>
 
               <div
-                class="feature-item mb-5 mb-lg-0"
+                className="feature-item mb-5 mb-lg-0"
                 style={{ backgroundColor: "#39cabb" }}
               >
                 <div
-                  class="feature-icon mb-4"
+                  className="feature-icon mb-4"
                   style={{
                     fontSize: "50px",
                     display: "grid",
@@ -95,14 +98,12 @@ const AttachedCards = () => {
                 >
                   <GiSandsOfTime />
                 </div>
-                <div class="feature-icon mb-4">
-                  <i class="icofont-support"></i>
-                </div>
-                <span>Comming Soon</span>
-                <h4 class="mb-3">New features</h4>
+                <span>{t("Comming Soon")}</span>
+                <h4 className="mb-3">{t("New features")}</h4>
                 <p>
-                  Exciting new features are coming soon, including a variety of
-                  engaging questions!
+                  {t(
+                    "Exciting new features are coming soon, including a variety of engaging questions!"
+                  )}
                 </p>
               </div>
             </div>

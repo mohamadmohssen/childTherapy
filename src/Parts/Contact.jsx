@@ -1,10 +1,11 @@
 import React from "react";
 import "../css/contact.css";
-import handleSubmit from "react";
-
 import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
       <section className="ftco-section">
@@ -18,16 +19,15 @@ const Contact = () => {
                 <div className="row no-gutters">
                   <div className="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
                     <div className="contact-wrap w-100 p-md-5 p-4">
-                      <h3 className="mb-4">Get in touch</h3>
+                      <h3 className="mb-4">{t("Get in touch")}</h3>
                       <div id="form-message-warning" className="mb-4"></div>
                       <div id="form-message-success" className="mb-4">
-                        Your message was sent, thank you!
+                        {t("Your message was sent, thank you!")}
                       </div>
                       <form
                         action="https://api.web3forms.com/submit"
                         method="POST"
                         className="contactForm"
-                        onSubmit={handleSubmit}
                       >
                         <div className="row">
                           <div className="col-md-6">
@@ -35,17 +35,17 @@ const Contact = () => {
                               type="hidden"
                               name="access_key"
                               value="b571a6d0-c79f-49e8-9234-b6c854e6d458"
-                            ></input>
+                            />
                             <div className="form-group">
                               <label className="label" htmlFor="name">
-                                Full Name
+                                {t("Full Name")}
                               </label>
                               <input
                                 type="text"
                                 className="form-control"
                                 name="Full-Name"
                                 id="name"
-                                placeholder="Full-Name"
+                                placeholder={t("Full Name")}
                                 required
                               />
                             </div>
@@ -53,14 +53,14 @@ const Contact = () => {
                           <div className="col-md-6">
                             <div className="form-group">
                               <label className="label" htmlFor="email">
-                                Email Address
+                                {t("Email Address")}
                               </label>
                               <input
                                 type="email"
                                 className="form-control"
                                 name="email"
                                 id="email"
-                                placeholder="Email"
+                                placeholder={t("Email")}
                                 required
                               />
                             </div>
@@ -68,14 +68,14 @@ const Contact = () => {
                           <div className="col-md-12">
                             <div className="form-group">
                               <label className="label" htmlFor="subject">
-                                Subject
+                                {t("Subject")}
                               </label>
                               <input
                                 type="text"
                                 className="form-control"
                                 name="subject"
                                 id="subject"
-                                placeholder="Subject"
+                                placeholder={t("Subject")}
                                 required
                               />
                             </div>
@@ -83,7 +83,7 @@ const Contact = () => {
                           <div className="col-md-12">
                             <div className="form-group">
                               <label className="label" htmlFor="message">
-                                Message
+                                {t("Message")}
                               </label>
                               <textarea
                                 name="message"
@@ -91,7 +91,7 @@ const Contact = () => {
                                 id="message"
                                 cols="30"
                                 rows="4"
-                                placeholder="Message"
+                                placeholder={t("Message")}
                                 required
                               ></textarea>
                             </div>
@@ -100,7 +100,7 @@ const Contact = () => {
                             <div className="form-group">
                               <input
                                 type="submit"
-                                value="Send Message"
+                                value={t("Send Message")}
                                 className="btn btn-primary"
                               />
                               <div className="submitting"></div>
@@ -112,9 +112,11 @@ const Contact = () => {
                   </div>
                   <div className="col-lg-4 col-md-5 d-flex align-items-stretch">
                     <div className="info-wrap bg-primary w-100 p-md-5 p-4">
-                      <h3>Let's get in touch</h3>
+                      <h3>{t("Let's get in touch")}</h3>
                       <p className="mb-4">
-                        We're open for any suggestion or just to have a chat
+                        {t(
+                          "We're open for any suggestion or just to have a chat"
+                        )}
                       </p>
                       <div className="dbox w-100 d-flex align-items-start">
                         <div className="icon d-flex align-items-center justify-content-center">
@@ -124,8 +126,10 @@ const Contact = () => {
                         </div>
                         <div className="text pl-3">
                           <p>
-                            <span>Address:</span>Beirut - Airport Road - Al
-                            Atrash Center - 2 floor
+                            <span>{t("Address")}:</span>
+                            {t(
+                              "Beirut - Airport Road - Al Atrash Center - 2 floor"
+                            )}
                           </p>
                         </div>
                       </div>
@@ -137,7 +141,7 @@ const Contact = () => {
                         </div>
                         <div className="text pl-3">
                           <p>
-                            <span>Phone:</span>{" "}
+                            <span>{t("Phone")}:</span>
                             <a href="tel://0096181431745">+961 81 431 745</a>
                           </p>
                         </div>
@@ -150,7 +154,7 @@ const Contact = () => {
                         </div>
                         <div className="text pl-3">
                           <p>
-                            <span>Email:</span>
+                            <span>{t("Email")}:</span>
                             <a href="mailto:samaideleb@gmail.com">
                               samaideleb@gmail.com
                             </a>
@@ -168,6 +172,5 @@ const Contact = () => {
     </div>
   );
 };
-<script src="js/bootstrap.min.js"></script>;
 
 export default Contact;

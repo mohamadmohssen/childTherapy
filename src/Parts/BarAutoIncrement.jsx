@@ -2,7 +2,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "../css/barai.css";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+
 const BarAutoIncrement = () => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const counters = document.querySelectorAll(".counter");
 
@@ -28,6 +32,7 @@ const BarAutoIncrement = () => {
         const interval = setInterval(updateCount, duration / totalSteps);
       });
     };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -46,6 +51,7 @@ const BarAutoIncrement = () => {
       observer.disconnect();
     };
   }, []);
+
   return (
     <section className="cta-section float-up-animation">
       <div className="container">
@@ -61,7 +67,7 @@ const BarAutoIncrement = () => {
                   >
                     0
                   </span>
-                  k<p className="txt-inside-counter">Happy People</p>
+                  k<p className="txt-inside-counter">{t("Happy People")}</p>
                 </strong>
               </div>
             </div>
@@ -75,7 +81,8 @@ const BarAutoIncrement = () => {
                   >
                     0
                   </span>
-                  +<p className="txt-inside-counter">Surgery Comepleted</p>
+                  +
+                  <p className="txt-inside-counter">{t("Surgery Completed")}</p>
                 </strong>
               </div>
             </div>
@@ -84,10 +91,13 @@ const BarAutoIncrement = () => {
               <div className="counter-stat">
                 <strong>
                   <i className="icofont-badge"></i>
-                  <span class="h3 counter txt-inside-counter" data-count="40">
+                  <span
+                    className="h3 counter txt-inside-counter"
+                    data-count="40"
+                  >
                     0
                   </span>
-                  +<p className="txt-inside-counter">Expert Doctors</p>
+                  +<p className="txt-inside-counter">{t("Expert Doctors")}</p>
                 </strong>
               </div>
             </div>
@@ -97,4 +107,5 @@ const BarAutoIncrement = () => {
     </section>
   );
 };
+
 export default BarAutoIncrement;
