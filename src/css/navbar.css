@@ -17,7 +17,7 @@
   color: #1b655d;
   text-transform: uppercase;
   letter-spacing: 2px;
- 
+
   /* Add any other styling you'd like */
 }
 
@@ -42,7 +42,7 @@
 }
 
 .text-color {
-  color: blue;
+  color: #1b655d;
 }
 
 .text-color-2 {
@@ -53,4 +53,46 @@
   width: 100px;
   height: 5px;
   background: #1b655d;
+}
+.language-selector {
+  border: 2px solid #1b655d; /* Blue border for distinctiveness */
+  border-radius: 10px; /* Slight rounding for a soft look */
+  padding: 0.5rem 1rem; /* Adequate padding for touch devices */
+  background-color: #f8f9fa; /* Light background for contrast */
+  color: #1b655d; /* Matching text color */
+  font-size: 1rem; /* Ensure readability */
+  appearance: none; /* Remove default dropdown appearance */
+  cursor: pointer; /* Indicate interactiveness */
+  font-weight: bold; /* Emphasize text */
+  text-align: center; /* Center text */
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+/* Custom dropdown arrow */
+.language-selector::after {
+  content: "▼";
+  font-size: 0.8rem;
+  color: #1b655d;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Hover and focus states */
+.language-selector:hover,
+.language-selector:focus {
+  background-color: #62dfdd; /* Change background on hover */
+  color: #fff; /* Change text color on hover */
+  border-color: #3ce0e0; /* Darken border on hover */
+  outline: none; /* Remove default outline */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .language-selector {
+    font-size: 0.9rem; /* Slightly smaller text on mobile */
+    padding: 0.4rem 0.8rem; /* Adjust padding for smaller screens */
+  }
 }

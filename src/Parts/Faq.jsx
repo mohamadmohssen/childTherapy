@@ -1,15 +1,19 @@
 import React from "react";
 import "../css/faq.css";
+import { useTranslation } from "react-i18next";
+
 const Faq = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
-      <section id="faq" className="container py-3 ">
+      <section id="faq" className="container py-3">
         <div className="row py-5">
           <div className="col-12 text-center">
             <h2 className="display-6">
-              <b>Frequently Asked Questions</b>
+              <b>{t("Frequently Asked Questions")}</b>
             </h2>
-            <h3 className="mt-5">General Questions</h3>
+            <h3 className="mt-5">{t("General Questions")}</h3>
           </div>
         </div>
         <div className="row">
@@ -25,7 +29,7 @@ const Faq = () => {
                     aria-expanded="true"
                     aria-controls="collapse_general_1"
                   >
-                    What types of assessments and tools do you offer?
+                    {t("What types of assessments and tools do you offer?")}
                   </button>
                 </h2>
                 <div
@@ -36,10 +40,9 @@ const Faq = () => {
                 >
                   <div className="accordion-body">
                     <strong>
-                      We offer a wide range of diagnostic and evaluation tools
-                      in the field of speech and language therapy. We also offer
-                      manuals on therapy as well as other sources of
-                      information.
+                      {t(
+                        "We offer a wide range of diagnostic and evaluation tools in the field of speech and language therapy. We also offer manuals on therapy as well as other sources of information."
+                      )}
                     </strong>
                   </div>
                 </div>
@@ -54,7 +57,7 @@ const Faq = () => {
                     aria-expanded="false"
                     aria-controls="collapse_general_2"
                   >
-                    Who can benefit from your resources?
+                    {t("Who can benefit from your resources?")}
                   </button>
                 </h2>
                 <div
@@ -65,9 +68,9 @@ const Faq = () => {
                 >
                   <div className="accordion-body">
                     <strong>
-                      Speech therapists, parents, special education teachers,
-                      caregivers, and other professionals working with
-                      individuals with speech or language disorders.
+                      {t(
+                        "Speech therapists, parents, special education teachers, caregivers, and other professionals working with individuals with speech or language disorders."
+                      )}
                     </strong>
                   </div>
                 </div>
@@ -82,7 +85,7 @@ const Faq = () => {
                     aria-expanded="false"
                     aria-controls="collapse_general_3"
                   >
-                    How do I know which products are right for my needs?
+                    {t("How do I know which products are right for my needs?")}
                   </button>
                 </h2>
                 <div
@@ -93,10 +96,9 @@ const Faq = () => {
                 >
                   <div className="accordion-body">
                     <strong>
-                      We provide product descriptions for each product launched
-                      on the website. Additionally, if you need any assistance
-                      in making your decision, our support team will help you
-                      out.
+                      {t(
+                        "We provide product descriptions for each product launched on the website. Additionally, if you need any assistance in making your decision, our support team will help you out."
+                      )}
                     </strong>
                   </div>
                 </div>
@@ -115,7 +117,9 @@ const Faq = () => {
                     aria-expanded="true"
                     aria-controls="collapse_general_4"
                   >
-                    If am a parent, can I use your materials/products at home?
+                    {t(
+                      "If am a parent, can I use your materials/products at home?"
+                    )}
                   </button>
                 </h2>
                 <div
@@ -126,10 +130,9 @@ const Faq = () => {
                 >
                   <div className="accordion-body">
                     <strong>
-                      Yes, we made sure that these materials are suitable for
-                      use at home. Materials come with instructions that make it
-                      easier for parents to guide their children while learning
-                      or practicing.
+                      {t(
+                        "Yes, we made sure that these materials are suitable for use at home. Materials come with instructions that make it easier for parents to guide their children while learning or practicing."
+                      )}
                     </strong>
                   </div>
                 </div>
@@ -144,8 +147,9 @@ const Faq = () => {
                     aria-expanded="false"
                     aria-controls="collapse_general_5"
                   >
-                    If am a specialist, how can I put your materials/products
-                    into practice in my current therapy sessions?
+                    {t(
+                      "If am a specialist, how can I put your materials/products into practice in my current therapy sessions?"
+                    )}
                   </button>
                 </h2>
                 <div
@@ -156,10 +160,9 @@ const Faq = () => {
                 >
                   <div className="accordion-body">
                     <strong>
-                      Our products enhance the existing methods of therapy you
-                      may already be using. They can be used as part of an
-                      assessment and during therapy sessions. Every product
-                      comes with instructions for application.
+                      {t(
+                        "Our products enhance the existing methods of therapy you may already be using. They can be used as part of an assessment and during therapy sessions. Every product comes with instructions for application."
+                      )}
                     </strong>
                   </div>
                 </div>
@@ -171,7 +174,7 @@ const Faq = () => {
         {/* section 2 */}
         <div className="row py-5">
           <div className="col-12 text-center">
-            <h3 className="mt-5">Research Use</h3>
+            <h3 className="mt-5">{t("Research Use")}</h3>
           </div>
         </div>
         <div className="row">
@@ -188,7 +191,7 @@ const Faq = () => {
                     aria-expanded="true"
                     aria-controls="collapse_research_1"
                   >
-                    Can your materials be used for research purposes?
+                    {t("Can your materials be used for research purposes?")}
                   </button>
                 </h2>
                 <div
@@ -199,11 +202,9 @@ const Faq = () => {
                 >
                   <div className="accordion-body">
                     <strong>
-                      Our products can be used for research purposes and can
-                      support research studies. However, written permission
-                      should be granted, and the conditions of use will be
-                      discussed per product. For further information, our team
-                      is ready to assist.
+                      {t(
+                        "Our products can be used for research purposes and can support research studies. However, written permission should be granted, and the conditions of use will be discussed per product. For further information, our team is ready to assist."
+                      )}
                     </strong>
                   </div>
                 </div>
@@ -218,8 +219,9 @@ const Faq = () => {
                     aria-expanded="false"
                     aria-controls="collapse_research_2"
                   >
-                    Are there any specific guidelines for using your materials
-                    in research studies?
+                    {t(
+                      "Are there any specific guidelines for using your materials in research studies?"
+                    )}
                   </button>
                 </h2>
                 <div
@@ -230,10 +232,9 @@ const Faq = () => {
                 >
                   <div className="accordion-body">
                     <strong>
-                      Specific guidelines will be defined for each product and
-                      can be requested by our support team. Of course, we
-                      request that you follow the recommended ethical guidelines
-                      and give appropriate credit to the authors.
+                      {t(
+                        "Specific guidelines will be defined for each product and can be requested by our support team. Of course, we request that you follow the recommended ethical guidelines and give appropriate credit to the authors."
+                      )}
                     </strong>
                   </div>
                 </div>
@@ -248,8 +249,9 @@ const Faq = () => {
                     aria-expanded="false"
                     aria-controls="collapse_research_3"
                   >
-                    How should I cite your materials/products in my research
-                    paper?
+                    {t(
+                      "How should I cite your materials/products in my research paper?"
+                    )}
                   </button>
                 </h2>
                 <div
@@ -260,9 +262,9 @@ const Faq = () => {
                 >
                   <div className="accordion-body">
                     <strong>
-                      Each item has its citation format recommended by us. Where
-                      there is no format provided, please contact us on how to
-                      cite them correctly.
+                      {t(
+                        "Each item has its citation format recommended by us. Where there is no format provided, please contact us on how to cite them correctly."
+                      )}
                     </strong>
                   </div>
                 </div>
@@ -277,7 +279,7 @@ const Faq = () => {
         <div className="container d-flex flex-column justify-content-center align-items-center">
           <div className="row py-5 w-100">
             <div className="col-12 text-center">
-              <h3 className="mt-5">Ordering and Shipping</h3>
+              <h3 className="mt-5">{t("Ordering and Shipping")}</h3>
             </div>
           </div>
           <div className="row w-100">
@@ -293,7 +295,7 @@ const Faq = () => {
                       aria-expanded="true"
                       aria-controls="collapse_product_1"
                     >
-                      How do I place an order?
+                      {t("How do I place an order?")}
                     </button>
                   </h2>
                   <div
@@ -304,8 +306,9 @@ const Faq = () => {
                   >
                     <div className="accordion-body">
                       <strong>
-                        You can place an order directly through our website by
-                        adding items to your cart and proceeding to checkout.
+                        {t(
+                          "You can place an order directly through our website by adding items to your cart and proceeding to checkout."
+                        )}
                       </strong>
                     </div>
                   </div>
@@ -320,7 +323,7 @@ const Faq = () => {
                       aria-expanded="false"
                       aria-controls="collapse_product_2"
                     >
-                      What payment methods do you accept?{" "}
+                      {t("What payment methods do you accept?")}
                     </button>
                   </h2>
                   <div
@@ -331,11 +334,9 @@ const Faq = () => {
                   >
                     <div className="accordion-body">
                       <strong>
-                        We accept different types of payment like cards
-                        (debit/credit), PayPal and some other online options
-                        that are safe to use. We also, accept payments through
-                        OMT and WHISH inside Lebanon. For more information,
-                        please contact us.
+                        {t(
+                          "We accept different types of payment like cards (debit/credit), PayPal and some other online options that are safe to use. We also, accept payments through OMT and WHISH inside Lebanon. For more information, please contact us."
+                        )}
                       </strong>
                     </div>
                   </div>
@@ -354,7 +355,7 @@ const Faq = () => {
                       aria-expanded="true"
                       aria-controls="collapse_product_4"
                     >
-                      Do you offer international shipping?
+                      {t("Do you offer international shipping?")}
                     </button>
                   </h2>
                   <div
@@ -365,8 +366,9 @@ const Faq = () => {
                   >
                     <div className="accordion-body">
                       <strong>
-                        Currently, shipping services are available only in
-                        Lebanon.
+                        {t(
+                          "Currently, shipping services are available only in Lebanon."
+                        )}
                       </strong>
                     </div>
                   </div>
@@ -381,7 +383,7 @@ const Faq = () => {
                       aria-expanded="false"
                       aria-controls="collapse_product_5"
                     >
-                      How long will it take to receive my order?{" "}
+                      {t("How long will it take to receive my order?")}
                     </button>
                   </h2>
                   <div
@@ -392,9 +394,9 @@ const Faq = () => {
                   >
                     <div className="accordion-body">
                       <strong>
-                        Delivery times differ depending on your address. Orders
-                        are typically processed within five to seven working
-                        days.
+                        {t(
+                          "Delivery times differ depending on your address. Orders are typically processed within five to seven working days."
+                        )}
                       </strong>
                     </div>
                   </div>
@@ -409,7 +411,7 @@ const Faq = () => {
         <div className="container d-flex flex-column justify-content-center align-items-center">
           <div className="row py-5 w-100">
             <div className="col-12 text-center">
-              <h3 className="mt-5">Product Support</h3>
+              <h3 className="mt-5">{t("Product Support")}</h3>
             </div>
           </div>
           <div className="row w-100">
@@ -425,7 +427,7 @@ const Faq = () => {
                       aria-expanded="true"
                       aria-controls="collapse_product_13"
                     >
-                      Can I get help with using the assessment tools?{" "}
+                      {t("Can I get help with using the assessment tools?")}
                     </button>
                   </h2>
                   <div
@@ -436,10 +438,9 @@ const Faq = () => {
                   >
                     <div className="accordion-body">
                       <strong>
-                        Yes, we offer detailed user manuals and descriptions for
-                        each product. Furthermore, our support team will always
-                        be there in case of any queries or assistance needed by
-                        the buyer.
+                        {t(
+                          "Yes, we offer detailed user manuals and descriptions for each product. Furthermore, our support team will always be there in case of any queries or assistance needed by the buyer."
+                        )}
                       </strong>
                     </div>
                   </div>
@@ -458,7 +459,7 @@ const Faq = () => {
                       aria-expanded="true"
                       aria-controls="collapse_product_14"
                     >
-                      Are your materials evidence-based?
+                      {t("Are your materials evidence-based?")}
                     </button>
                   </h2>
                   <div
@@ -469,11 +470,9 @@ const Faq = () => {
                   >
                     <div className="accordion-body">
                       <strong>
-                        All our resources have been developed based on current
-                        research and best practices in speech-language therapy
-                        as well as the recommended guidelines. We also provide
-                        documentation regarding the validity and reliability of
-                        our products.
+                        {t(
+                          "All our resources have been developed based on current research and best practices in speech-language therapy as well as the recommended guidelines. We also provide documentation regarding the validity and reliability of our products."
+                        )}
                       </strong>
                     </div>
                   </div>
@@ -487,7 +486,7 @@ const Faq = () => {
 
         <div className="row py-5">
           <div className="col-12 text-center">
-            <h3 className="mt-5">Technical Support </h3>
+            <h3 className="mt-5">{t("Technical Support")}</h3>
           </div>
         </div>
         <div className="row">
@@ -504,8 +503,9 @@ const Faq = () => {
                     aria-expanded="true"
                     aria-controls="collapse_research_15"
                   >
-                    What should I do if I face technical issues with the
-                    website?
+                    {t(
+                      "What should I do if I face technical issues with the website?"
+                    )}
                   </button>
                 </h2>
                 <div
@@ -516,8 +516,9 @@ const Faq = () => {
                 >
                   <div className="accordion-body">
                     <strong>
-                      Please contact us in case of any technical issues; we are
-                      always ready to assist.
+                      {t(
+                        "Please contact us in case of any technical issues; we are always ready to assist."
+                      )}
                     </strong>
                   </div>
                 </div>
